@@ -5,15 +5,18 @@ let savedTime = 0;
 let currentInputValues = { hours: 0, minutes: 0, seconds: 0 };
 
 function initTimer() {
-    document.getElementById('start-timer').addEventListener('click', startTimer);
+    
+	document.getElementById('start-timer').addEventListener('click', startTimer);
     document.getElementById('pause-timer').addEventListener('click', pauseTimer);
     document.getElementById('reset-timer').addEventListener('click', resetTimer);
 }
 
 function startTimer() {
-    // Se è già in esecuzione, ferma il timer corrente
+    
+	// Se è già in esecuzione, ferma il timer corrente
     if (isRunning) {
-        clearInterval(timerInterval);
+        
+		clearInterval(timerInterval);
         isRunning = false;
     }
 
@@ -28,10 +31,13 @@ function startTimer() {
 
     // Se non è in pausa, calcola il nuovo tempo
     if (savedTime === 0) {
-        totalSeconds = currentInputValues.hours * 3600 + 
+        
+		totalSeconds = currentInputValues.hours * 3600 + 
                       currentInputValues.minutes * 60 + 
                       currentInputValues.seconds;
-    } else {
+    } 
+	else {
+		
         // Se è in pausa, usa il tempo salvato
         totalSeconds = savedTime;
         savedTime = 0;
@@ -46,30 +52,37 @@ function startTimer() {
 }
 
 function updateTimer() {
-    totalSeconds--;
+    
+	totalSeconds--;
     updateTimerDisplay(totalSeconds);
 
     if (totalSeconds <= 0) {
-        clearInterval(timerInterval);
+        
+		clearInterval(timerInterval);
         isRunning = false;
         showCompletionAndReset();
     }
 }
 
 function showCompletionAndReset() {
-    const display = document.getElementById('timer-display');
+    
+	const display = document.getElementById('timer-display');
     display.textContent = "00:00:00";
     display.style.color = "#ff0000";
     display.style.fontWeight = "bold";
     
     setTimeout(() => {
-        resetTimer();
+        
+		resetTimer();
+		
     }, 2000);
 }
 
 function pauseTimer() {
-    if (isRunning) {
-        clearInterval(timerInterval);
+    
+	if (isRunning) {
+        
+		clearInterval(timerInterval);
         isRunning = false;
         savedTime = totalSeconds; // Salva il tempo rimanente
         
@@ -81,12 +94,15 @@ function pauseTimer() {
 }
 
 function resetTimer() {
-    clearInterval(timerInterval);
+    
+	clearInterval(timerInterval);
     isRunning = false;
     totalSeconds = 0;
     savedTime = 0;
-    currentInputValues = { hours: 0, minutes: 0, seconds: 0 };
-    document.getElementById('hours-input').value = '';
+    
+	currentInputValues = { hours: 0, minutes: 0, seconds: 0 };
+    
+	document.getElementById('hours-input').value = '';
     document.getElementById('minutes-input').value = '';
     document.getElementById('seconds-input').value = '';
     
@@ -97,7 +113,8 @@ function resetTimer() {
 }
 
 function updateTimerDisplay(seconds) {
-    const hours = Math.floor(seconds / 3600);
+    
+	const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60;
 
@@ -106,8 +123,11 @@ function updateTimerDisplay(seconds) {
         `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
 
     if (seconds <= 10) {
-        display.style.color = "#ff5555";
-    } else {
+        
+		display.style.color = "#ff5555";
+    } 
+	else {
+		
         display.style.color = "";
     }
 }

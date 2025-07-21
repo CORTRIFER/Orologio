@@ -2,14 +2,17 @@ let animationId;
 let lastUpdateTime = 0;
 
 function aggiornaOrologio() {
-    const ora = new Date();
+    
+	const ora = new Date();
     
     // Formato digitale
     let h = ora.getHours();
     const m = ora.getMinutes();
     const s = ora.getSeconds();
+	
     const ampm = h >= 12 ? "PM" : "AM";
     const h12 = h % 12 || 12;
+   
     const hh = h12.toString().padStart(2, '0');
     const mm = m.toString().padStart(2, '0');
     const ss = s.toString().padStart(2, '0');
@@ -35,14 +38,16 @@ function aggiornaOrologio() {
 }
 
 function creaQuadranteAnalogico() {
-    const clock = document.getElementById("analog-clock");
+    
+	const clock = document.getElementById("analog-clock");
     clock.querySelectorAll(".numero-ora, .tacca-ora, .tacca-minuto").forEach(el => el.remove());
 
     const clockSize = 250;
     const center = clockSize / 2;
 
     for (let i = 0; i < 60; i++) {
-        const angle = i * 6;
+        
+		const angle = i * 6;
         const isHourMark = i % 5 === 0;
 
         const tacca = document.createElement("div");
@@ -51,12 +56,15 @@ function creaQuadranteAnalogico() {
         clock.appendChild(tacca);
 
         if (isHourMark) {
-            const numero = document.createElement("div");
+            
+			const numero = document.createElement("div");
             numero.className = "numero-ora";
-            const hourNum = i === 0 ? 12 : i / 5;
+            
+			const hourNum = i === 0 ? 12 : i / 5;
             const radius = 100;
             const rad = (angle - 90) * (Math.PI / 180);
-            numero.style.left = `${center + Math.cos(rad) * radius}px`;
+            
+			numero.style.left = `${center + Math.cos(rad) * radius}px`;
             numero.style.top = `${center + Math.sin(rad) * radius}px`;
             numero.textContent = hourNum;
             clock.appendChild(numero);
@@ -66,23 +74,31 @@ function creaQuadranteAnalogico() {
 
 // Gestione efficiente della visibilità
 function handleVisibilityChange() {
-    if (document.hidden) {
-        cancelAnimationFrame(animationId);
-    } else {
+    
+	if (document.hidden) {
+        
+		cancelAnimationFrame(animationId);
+    } 
+	else {
+		
         animationId = requestAnimationFrame(aggiornaOrologio);
     }
 }
 
 // Inizializzazione
 function initOrologio() {
-    creaQuadranteAnalogico();
+    
+	creaQuadranteAnalogico();
     animationId = requestAnimationFrame(aggiornaOrologio);
     document.addEventListener("visibilitychange", handleVisibilityChange);
 }
 
 // Avvio quando il DOM è pronto
 if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initOrologio);
-} else {
+    
+	document.addEventListener("DOMContentLoaded", initOrologio);
+} 
+else {
+	
     initOrologio();
 }

@@ -1,12 +1,14 @@
 document.getElementById('timezone-selector').addEventListener('change', updateTimezoneDisplay);
 
 function updateTimezoneDisplay() {
-    const timezone = document.getElementById('timezone-selector').value;
+    
+	const timezone = document.getElementById('timezone-selector').value;
     const now = new Date();
     
     // Opzioni per l'orario
     const timeOptions = {
-        timeZone: timezone,
+        
+		timeZone: timezone,
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
@@ -15,7 +17,8 @@ function updateTimezoneDisplay() {
     
     // Opzioni per la data
     const dateOptions = {
-        timeZone: timezone,
+        
+		timeZone: timezone,
         weekday: 'long',
         year: 'numeric',
         month: 'long',
@@ -25,8 +28,10 @@ function updateTimezoneDisplay() {
     // Calcola l'offset GMT
     const timezoneOffset = -now.getTimezoneOffset() / 60;
     const gmtOffset = new Intl.DateTimeFormat('it-IT', {
-        timeZone: timezone,
+        
+		timeZone: timezone,
         timeZoneName: 'short'
+		
     }).format(now).split(' ')[1];
     
     // Formatta l'orario

@@ -10,29 +10,35 @@ document.getElementById('reset-stopwatch').addEventListener('click', resetStopwa
 document.getElementById('lap-stopwatch').addEventListener('click', recordLap);
 
 function startStopwatch() {
-    if (!stopwatchIsRunning) {
-        stopwatchStartTime = Date.now() - stopwatchElapsed;
+    
+	if (!stopwatchIsRunning) {
+        
+		stopwatchStartTime = Date.now() - stopwatchElapsed;
         stopwatchInterval = setInterval(updateStopwatch, 10);
         stopwatchIsRunning = true;
     }
 }
 
 function pauseStopwatch() {
-    clearInterval(stopwatchInterval);
+    
+	clearInterval(stopwatchInterval);
     stopwatchIsRunning = false;
 }
 
 function resetStopwatch() {
-    clearInterval(stopwatchInterval);
+    
+	clearInterval(stopwatchInterval);
     stopwatchElapsed = 0;
     stopwatchIsRunning = false;
-    document.getElementById('stopwatch-display').textContent = '00:00:00.000';
+    
+	document.getElementById('stopwatch-display').textContent = '00:00:00.000';
     document.getElementById('laps-container').innerHTML = '';
     laps = [];
 }
 
 function recordLap() {
-    if (!stopwatchIsRunning) return;
+    
+	if (!stopwatchIsRunning) return;
     
     const currentTime = document.getElementById('stopwatch-display').textContent;
     const lapItem = document.createElement('div');
@@ -42,7 +48,9 @@ function recordLap() {
 
 	// E dopo 0,4s secondi torna al colore normale
 	setTimeout(() => {
+		
 		lapItem.style.backgroundColor = '';
+		
 	}, 400);
 	
     lapItem.className = 'lap-item';
@@ -57,7 +65,8 @@ function recordLap() {
 }
 
 function updateStopwatch() {
-    stopwatchElapsed = Date.now() - stopwatchStartTime;
+    
+	stopwatchElapsed = Date.now() - stopwatchStartTime;
     
     const hours = Math.floor(stopwatchElapsed / 3600000);
     const minutes = Math.floor((stopwatchElapsed % 3600000) / 60000);

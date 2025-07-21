@@ -1,20 +1,30 @@
 <!DOCTYPE html>
+
 <html lang="it">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fusi Orari</title>
+    
+	<title>Fusi Orari</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
+
     <nav class="top-nav">
         <a href="index.html" class="back-button">← Menu</a>
     </nav>
 
     <div class="timezone-page">
-        <h2>Fusi Orari</h2>
+        
+		<h2>Fusi Orari</h2>
+		
         <div class="timezone-container">
-            <select id="timezone-selector" size="2">
+            
+			<select id="timezone-selector" size="2">
                 <option value="Europe/Rome" selected>Italia (Roma)</option>
                 <option value="Europe/Paris">Francia (Parigi)</option>
                 <option value="Europe/Berlin">Germania (Berlino)</option>
@@ -51,11 +61,16 @@
                 <option value="Pacific/Auckland">Nuova Zelanda (Auckland)</option>
 				<option value="Pacific/Honolulu">USA (Honolulu, Hawaii)</option>
             </select>
+			
             <div class="timezone-display" id="timezone-display"></div>
             <div class="timezone-date" id="timezone-date"></div>
+			
         </div>
+		
     </div>
 
     <script src="fusi-orari.js"></script>
+	
 </body>
+
 </html>
