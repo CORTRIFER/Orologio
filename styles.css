@@ -605,14 +605,3 @@ body {
     }
 	
 }
-
-button, .menu-button, .back-button, select {
-	
-	-webkit-tap-highlight-color: transparent;
-	touch-action: manipulation;
-	min-height: 44px; /* Dimensione minima per touch target */
-}
-
-input, select {
-	font-size: 16px; /* Previene lo zoom automatico su iOS */
-}
