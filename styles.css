@@ -367,98 +367,6 @@ body {
         font-size: 1rem;
     }
 
-    /* Orologio digitale */
-    .digital-clock {
-        font-size: 2rem;
-        padding: 15px 30px;
-    }
-
-    /* Orologio analogico */
-    .analog-clock {
-        width: 200px;
-        height: 200px;
-    }
-
-    .hand {
-        /* Regola le dimensioni delle lancette per lo schermo più piccolo */
-    }
-    
-    .hour {
-        height: 50px;
-    }
-    
-    .minute {
-        height: 75px;
-    }
-    
-    .second {
-        height: 90px;
-    }
-
-    /* Timer e Cronometro */
-    .timer-display, .stopwatch-display, .timezone-display {
-        font-size: 1.8rem;
-    }
-
-    .timer-controls input {
-        width: 60px;
-        font-size: 1rem;
-    }
-
-    .timer-buttons button, .stopwatch-buttons button {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-        min-width: 70px;
-    }
-
-    /* Fusi orari */
-    .timezone-city {
-        font-size: 1.3rem;
-        margin-bottom: -25px;
-    }
-
-    .timezone-time {
-        font-size: 2rem;
-    }
-
-    .timezone-date {
-        font-size: 1.2rem;
-    }
-
-    .timezone-container select {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
-
-    /* Layout generale per pagine di contenuto */
-    .container, .timer-page, .stopwatch-page, .timezone-page {
-        padding-top: 50px; /* Spazio per il pulsante di ritorno */
-    }
-
-    /* Pulsante di ritorno */
-    .back-button {
-        font-size: 1rem;
-        padding: 5px 8px;
-    }
-}
-
-/* Media query per schermi fino a 768px (tipico per smartphone) */
-@media only screen and (max-width: 768px) {
-    body {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .main-menu h1 {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-    }
-
-    .menu-button {
-        padding: 12px 20px;
-        font-size: 1rem;
-    }
-
     /* Orologio analogico */
     #analog-clock {
         display: none !important;
@@ -525,6 +433,14 @@ body {
     .back-button {
         font-size: 1rem;
         padding: 5px 8px;
+    }
+
+	.timer-container, 
+    .stopwatch-container, 
+    .timezone-container {
+        width: 90%; /* Più spazio sui lati */
+        padding: 15px; /* Spazio interno ridotto */
+        border-width: 2px; /* Cornice più sottile */
     }
 }
 
