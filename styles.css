@@ -472,59 +472,52 @@ body {
     }
 
     .hand {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform-origin: bottom;
-        transform: translate(-50%, -100%) rotate(0deg);
-        will-change: transform;
-        backface-visibility: hidden;
-        transform-style: preserve-3d;
-        transition: transform 0.05s cubic-bezier(0.4, 2.3, 0.3, 1); /* Animazione più fluida */
+        transform-origin: 50% 90%; /* Punto di rotazione leggermente rialzato */
+        transition: transform 0.15s cubic-bezier(0.4, 2.5, 0.3, 1); /* Animazione più reattiva */
     }
 
-    /* Lancetta delle ore */
+    /* Lancetta ore mobile */
     .hour {
-        width: 4px;
-        height: 40px; /* Ridotta da 60px */
-        background-color: #00cccc;
-        box-shadow: 0 0 2px 1px #00ffff;
-        z-index: 3; /* Sopra le altre lancette */
-        border-radius: 4px 4px 0 0;
+        width: 5px;
+        height: 35px; 
+        margin-left: -2.5px; /* Centra perfettamente */
+        background: #00cccc;
+        box-shadow: 
+            0 0 3px #00ffff,
+            inset 0 -5px 3px rgba(0,200,200,0.5); /* Effetto 3D */
     }
 
-    /* Lancetta dei minuti */
+    /* Lancetta minuti mobile */
     .minute {
         width: 3px;
-        height: 60px; /* Ridotta da 90px */
-        background-color: #008080;
-        box-shadow: 0 0 2px 1px #00aaff;
-        z-index: 2;
-        border-radius: 3px 3px 0 0;
+        height: 55px;
+        margin-left: -1.5px;
+        background: #008080;
+        box-shadow: 
+            0 0 3px #00aaff,
+            inset 0 -8px 3px rgba(0,150,150,0.4);
     }
 
-    /* Lancetta dei secondi */
+    /* Lancetta secondi mobile */
     .second {
-        width: 2px;
-        height: 70px; /* Ridotta da 110px */
-        background-color: #ff4081;
-        box-shadow: 0 0 2px 1px #ff0000;
-        z-index: 1;
-        border-radius: 2px 2px 0 0;
+        width: 1.5px;
+        height: 65px;
+        margin-left: -0.75px;
+        background: #ff4081;
+        box-shadow: 
+            0 0 4px #ff0066,
+            inset 0 -10px 3px rgba(200,0,50,0.3);
+        transition-timing-function: cubic-bezier(0.2, 2.8, 0.4, 1); /* Scatto più preciso */
     }
 
-    /* Punto centrale */
+    /* Centro mobile */
     .center-dot {
-        width: 12px;
-        height: 12px;
-        background-color: #00ffff;
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        box-shadow: 0 0 3px 2px #121212;
-        z-index: 4; /* Sopra tutte le lancette */
+        width: 11px;
+        height: 11px;
+        box-shadow: 
+            0 0 5px #00ffff,
+            inset 0 0 4px #000;
+        border: 1px solid #121212;
     }
 
     /* Timer e Cronometro */
