@@ -482,3 +482,81 @@ button, .menu-button, .back-button, select {
 input, select {
     font-size: 16px; /* Previene lo zoom automatico su iOS */
 }
+
+/* Aggiungi queste regole nella sezione mobile del tuo CSS */
+
+@media only screen and (max-width: 768px) {
+    /* Orologio analogico - modifiche specifiche */
+    .analog-clock {
+        width: 180px;
+        height: 180px;
+        border-width: 6px;
+    }
+
+    /* Regola le lancette */
+    .hour {
+        width: 4px;
+        height: 40px;
+    }
+
+    .minute {
+        width: 3px;
+        height: 60px;
+    }
+
+    .second {
+        width: 2px;
+        height: 70px;
+    }
+
+    /* Regola i numeri e le tacche */
+    .numero-ora {
+        font-size: 0.8rem;
+    }
+
+    .tacca-ora {
+        width: 3px;
+        height: 8px;
+        transform-origin: 50% 90px;
+        margin-top: -90px;
+    }
+
+    .tacca-minuto {
+        width: 1px;
+        height: 4px;
+        transform-origin: 50% 90px;
+        margin-top: -90px;
+    }
+
+    /* Centro dell'orologio */
+    .center-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Ulteriori regolazioni per schermi molto piccoli */
+    .analog-clock {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hour {
+        height: 35px;
+    }
+
+    .minute {
+        height: 50px;
+    }
+
+    .second {
+        height: 60px;
+    }
+
+    /* Aggiorna le posizioni delle tacche */
+    .tacca-ora, .tacca-minuto {
+        transform-origin: 50% 75px;
+        margin-top: -75px;
+    }
+}
