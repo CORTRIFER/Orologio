@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fusi Orari</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html" class="back-button">← Menu</a>
+    </nav>
+
+    <div class="timezone-page">
+        <h2>Fusi Orari</h2>
+        <div class="timezone-container">
+            <select id="timezone-selector" size="2">
+                <option value="Europe/Rome" selected>Italia (Roma)</option>
+                <option value="Europe/Paris">Francia (Parigi)</option>
+                <option value="Europe/Berlin">Germania (Berlino)</option>
+                <option value="Europe/London">Regno Unito (Londra)</option>
+                <option value="Europe/Madrid">Spagna (Madrid)</option>
+				<option value="Europe/Amsterdam">Olanda (Amsterdam)</option>
+				<option value="Europe/Athens">Grecia (Atene)</option>
+				<option value="Europe/Lisbon">Portogallo (Lisbona)</option>
+				<option value="Europe/Stockholm">Svezia (Stoccolma)</option>
+				<option value="Europe/Zurich">Svizzera (Zurigo)</option>
+				<option value="Europe/Moscow">Russia (Mosca)</option>
+				<option value="America/Toronto">Canada (Toronto)</option>
+                <option value="America/New_York">USA (New York)</option>
+                <option value="America/Los_Angeles">USA (Los Angeles)</option>
+                <option value="America/Sao_Paulo">Brasile (San Paolo)</option>
+				<option value="America/Buenos_Aires">Argentina (Buenos Aires)</option>
+				<option value="America/Toronto">Canada (Toronto)</option>
+                <option value="America/Mexico_City">Messico (Città del Messico)</option>
+				<option value="Asia/Singapore">Singapore (Singapore)</option>
+                <option value="Asia/Hong_Kong">Hong Kong (Hong Kong)</option>
+                <option value="Asia/Seoul">Corea del Sud (Seoul)</option>
+                <option value="Asia/Bangkok">Thailandia (Bangkok)</option>
+                <option value="Asia/Jerusalem">Israele (Gerusalemme)</option>
+                <option value="Asia/Tokyo">Giappone (Tokyo)</option>
+                <option value="Asia/Shanghai">Cina (Shanghai)</option>
+                <option value="Asia/Dubai">Emirati Arabi (Dubai)</option>
+				<option value="Asia/Jakarta">Indonesia (Jakarta)</option>
+                <option value="Africa/Cairo">Egitto (Il Cairo)</option>
+                <option value="Africa/Casablanca">Marocco (Casablanca)</option>
+				<option value="Africa/Nairobi">Kenya (Nairobi)</option>
+				<option value="Africa/Johannesburg">Sudafrica (Johannesburg)</option>
+				<option value="Africa/Tunis">Tunisia (Tunisi)</option>
+				<option value="Australia/Sydney">Australia (Sydney)</option>
+                <option value="Pacific/Auckland">Nuova Zelanda (Auckland)</option>
+				<option value="Pacific/Honolulu">USA (Honolulu, Hawaii)</option>
+            </select>
+            <div class="timezone-display" id="timezone-display"></div>
+            <div class="timezone-date" id="timezone-date"></div>
+        </div>
+    </div>
+
+    <script src="fusi-orari.js"></script>
+</body>
+</html>
