@@ -560,3 +560,37 @@ input, select {
         margin-top: -75px;
     }
 }
+
+/* Numeri delle ore - versione mobile */
+@media only screen and (max-width: 768px) {
+    .numero-ora {
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: #00cccc;
+        text-shadow: 0 0 3px rgba(0, 255, 255, 0.5);
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Posizionamento specifico per ogni numero */
+    .numero-ora:nth-child(1) { transform: translate(-50%, -50%) rotate(30deg); }  /* 1 */
+    .numero-ora:nth-child(2) { transform: translate(-50%, -50%) rotate(60deg); }  /* 2 */
+    .numero-ora:nth-child(3) { transform: translate(-50%, -50%) rotate(0deg); }   /* 3 */
+    .numero-ora:nth-child(4) { transform: translate(-50%, -50%) rotate(-60deg); } /* 4 */
+    .numero-ora:nth-child(5) { transform: translate(-50%, -50%) rotate(-30deg); } /* 5 */
+    .numero-ora:nth-child(6) { transform: translate(-50%, -50%) rotate(0deg); }   /* 6 */
+    /* Continua per gli altri numeri... */
+}
+
+/* Versione per schermi molto piccoli */
+@media only screen and (max-width: 480px) {
+    .numero-ora {
+        font-size: 0.7rem;
+        width: 16px;
+        height: 16px;
+    }
+}
