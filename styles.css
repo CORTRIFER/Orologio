@@ -459,26 +459,19 @@ body {
         font-size: 1rem;
     }
 
-    /* Orologio digitale */
-    .digital-clock {
-        font-size: 2rem;
-        padding: 15px 30px;
-    }
-
     /* Orologio analogico */
     .analog-clock {
-        display: none !important;
+        display: none; /* Nasconde completamente l'orologio analogico */
     }
     
-    /* Adatta il contenitore per mostrare solo il digitale */
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    /* Riduci il margine sotto l'orologio digitale */
     .digital-clock-container {
-        margin-bottom: 20px;
+        margin-bottom: 0; /* Riduce lo spazio sotto il digitale */
+    }
+    
+    /* Opzionale: ingrandisce l'orologio digitale per mobile */
+    .digital-clock {
+        font-size: 3.5rem;
+        padding: 30px 60px;
     }
 
     /* Timer e Cronometro */
