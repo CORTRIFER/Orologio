@@ -477,8 +477,8 @@ body {
     
     /* Opzionale: ingrandisce l'orologio digitale per mobile */
     .digital-clock {
-        font-size: 3.5rem;
-        padding: 30px 60px;
+        font-size: 5rem;
+        padding: 50px 70px;
     }
 
     /* Timer e Cronometro */
