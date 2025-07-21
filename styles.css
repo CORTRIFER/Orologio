@@ -531,8 +531,8 @@ body {
 /* Media query per schermi molto piccoli (fino a 480px) */
 @media only screen and (max-width: 480px) {
     .digital-clock {
-        font-size: 1.5rem;
-        padding: 10px 20px;
+        font-size: 3rem;
+        padding: 30px 40px;
     }
 
     .timer-display, .stopwatch-display, .timezone-display {
