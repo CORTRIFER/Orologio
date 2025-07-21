@@ -442,6 +442,138 @@ body {
     }
 }
 
+/* Media query per schermi fino a 768px (tipico per smartphone) */
+@media only screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .main-menu h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .menu-button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    /* Orologio digitale */
+    .digital-clock {
+        font-size: 2rem;
+        padding: 15px 30px;
+    }
+
+    /* Orologio analogico */
+    .analog-clock {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hand {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: bottom;
+        transform: translate(-50%, -100%) rotate(0deg);
+        will-change: transform;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        transition: transform 0.05s cubic-bezier(0.4, 2.3, 0.3, 1); /* Animazione più fluida */
+    }
+
+    /* Lancetta delle ore */
+    .hour {
+        width: 4px;
+        height: 40px; /* Ridotta da 60px */
+        background-color: #00cccc;
+        box-shadow: 0 0 2px 1px #00ffff;
+        z-index: 3; /* Sopra le altre lancette */
+        border-radius: 4px 4px 0 0;
+    }
+
+    /* Lancetta dei minuti */
+    .minute {
+        width: 3px;
+        height: 60px; /* Ridotta da 90px */
+        background-color: #008080;
+        box-shadow: 0 0 2px 1px #00aaff;
+        z-index: 2;
+        border-radius: 3px 3px 0 0;
+    }
+
+    /* Lancetta dei secondi */
+    .second {
+        width: 2px;
+        height: 70px; /* Ridotta da 110px */
+        background-color: #ff4081;
+        box-shadow: 0 0 2px 1px #ff0000;
+        z-index: 1;
+        border-radius: 2px 2px 0 0;
+    }
+
+    /* Punto centrale */
+    .center-dot {
+        width: 12px;
+        height: 12px;
+        background-color: #00ffff;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 3px 2px #121212;
+        z-index: 4; /* Sopra tutte le lancette */
+    }
+
+    /* Timer e Cronometro */
+    .timer-display, .stopwatch-display, .timezone-display {
+        font-size: 1.8rem;
+    }
+
+    .timer-controls input {
+        width: 60px;
+        font-size: 1rem;
+    }
+
+    .timer-buttons button, .stopwatch-buttons button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        min-width: 70px;
+    }
+
+    /* Fusi orari */
+    .timezone-city {
+        font-size: 1.3rem;
+        margin-bottom: -25px;
+    }
+
+    .timezone-time {
+        font-size: 2rem;
+    }
+
+    .timezone-date {
+        font-size: 1.2rem;
+    }
+
+    .timezone-container select {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Layout generale per pagine di contenuto */
+    .container, .timer-page, .stopwatch-page, .timezone-page {
+        padding-top: 50px; /* Spazio per il pulsante di ritorno */
+    }
+
+    /* Pulsante di ritorno */
+    .back-button {
+        font-size: 1rem;
+        padding: 5px 8px;
+    }
+}
+
 /* Media query per schermi molto piccoli (fino a 480px) */
 @media only screen and (max-width: 480px) {
     .digital-clock {
@@ -472,127 +604,15 @@ body {
         font-size: 0.8rem;
     }
 	
-   button, .menu-button, .back-button, select {
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    min-height: 44px; /* Dimensione minima per touch target */
-   }
-
-  input, select {
-    font-size: 16px; /* Previene lo zoom automatico su iOS */
-  }
 }
 
-
-
-/* Aggiungi queste regole nella sezione mobile del tuo CSS */
-
-@media only screen and (max-width: 768px) {
-    /* Orologio analogico - modifiche specifiche */
-    .analog-clock {
-        width: 180px;
-        height: 180px;
-        border-width: 6px;
-    }
-
-    /* Regola le lancette */
-    .hour {
-        width: 4px;
-        height: 40px;
-    }
-
-    .minute {
-        width: 3px;
-        height: 60px;
-    }
-
-    .second {
-        width: 2px;
-        height: 70px;
-    }
-
-    /* Regola i numeri e le tacche */
-    .numero-ora {
-        font-size: 0.8rem;
-    }
-
-    .tacca-ora {
-        width: 3px;
-        height: 8px;
-        transform-origin: 50% 90px;
-        margin-top: -90px;
-    }
-
-    .tacca-minuto {
-        width: 1px;
-        height: 4px;
-        transform-origin: 50% 90px;
-        margin-top: -90px;
-    }
-
-    /* Centro dell'orologio */
-    .center-dot {
-        width: 10px;
-        height: 10px;
-    }
+button, .menu-button, .back-button, select {
+	
+	-webkit-tap-highlight-color: transparent;
+	touch-action: manipulation;
+	min-height: 44px; /* Dimensione minima per touch target */
 }
 
-@media only screen and (max-width: 480px) {
-    /* Ulteriori regolazioni per schermi molto piccoli */
-    .analog-clock {
-        width: 150px;
-        height: 150px;
-    }
-
-    .hour {
-        height: 35px;
-    }
-
-    .minute {
-        height: 50px;
-    }
-
-    .second {
-        height: 60px;
-    }
-
-    /* Aggiorna le posizioni delle tacche */
-    .tacca-ora, .tacca-minuto {
-        transform-origin: 50% 75px;
-        margin-top: -75px;
-    }
-}
-
-/* Numeri delle ore - versione mobile */
-@media only screen and (max-width: 768px) {
-    .numero-ora {
-        font-size: 0.9rem;
-        font-weight: bold;
-        color: #00cccc;
-        text-shadow: 0 0 3px rgba(0, 255, 255, 0.5);
-        width: 20px;
-        height: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: translate(-50%, -50%);
-    }
-
-    /* Posizionamento specifico per ogni numero */
-    .numero-ora:nth-child(1) { transform: translate(-50%, -50%) rotate(30deg); }  /* 1 */
-    .numero-ora:nth-child(2) { transform: translate(-50%, -50%) rotate(60deg); }  /* 2 */
-    .numero-ora:nth-child(3) { transform: translate(-50%, -50%) rotate(0deg); }   /* 3 */
-    .numero-ora:nth-child(4) { transform: translate(-50%, -50%) rotate(-60deg); } /* 4 */
-    .numero-ora:nth-child(5) { transform: translate(-50%, -50%) rotate(-30deg); } /* 5 */
-    .numero-ora:nth-child(6) { transform: translate(-50%, -50%) rotate(0deg); }   /* 6 */
-    /* Continua per gli altri numeri... */
-}
-
-/* Versione per schermi molto piccoli */
-@media only screen and (max-width: 480px) {
-    .numero-ora {
-        font-size: 0.7rem;
-        width: 16px;
-        height: 16px;
-    }
+input, select {
+	font-size: 16px; /* Previene lo zoom automatico su iOS */
 }
