@@ -434,14 +434,6 @@ body {
         font-size: 1rem;
         padding: 5px 8px;
     }
-
-	.timer-container, 
-    .stopwatch-container, 
-    .timezone-container {
-        width: 90%; /* Più spazio sui lati */
-        padding: 15px; /* Spazio interno ridotto */
-        border-width: 2px; /* Cornice più sottile */
-    }
 }
 
 /* Media query per schermi molto piccoli (fino a 480px) */
